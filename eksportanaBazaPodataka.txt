@@ -1,0 +1,55 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.12
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 09, 2019 at 11:42 AM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `radovi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `role` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'ADMIN', 'admin@gmail.com', '$2y$10$eetVyCp1CqomDn7jtyOcfO7ff07bCXRjDoEptnJq5DJl48hJ6OvZ2', 'admin', '4VRxzcYnbUuwvktHeJMBbCjGDyNxTY0fxfAs6THC2s2o2h73ilRKyEZrINfS', '2019-05-07 07:37:15', '2019-05-09 07:11:55'),
+(2, 'student', 'student@gmail.com', '$2y$10$LXdrk7sEqGdYiBQPYWjpye9fdWxdLMfB0M00XqBRFYfWuSwqXHSTq', 'student', 'jzWak4Qqz7S7VAc9LLCl51GPrOnbDTIFdT90JZl1LobZLyARz9KUAANDUd2L', '2019-05-07 07:38:28', '2019-05-09 07:29:05'),
+(3, 'student2', 'student2@gmail.com', '$2y$10$Fu9Agkh1DllrowrzrNWXhOfNeE0BWHCDepO14mL78c5k8ChJpQKoG', 'student', 'dTa4TdSPnM77hXVhkHPnUa5ysruTZYIPlpxcDjX9e6BE80cabhA9gHtUEzY0', '2019-05-07 07:51:19', '2019-05-07 07:59:53'),
+(4, 'student3', 'student3@gmail.com', '$2y$10$Doi9QE.zAvebpVKPWpJ5K.7anw4cPlrN8AG6EcsItiL89xXnxZgse', 'student', 'EjyucAKFhF4e7idUgXSwPIGhqJ78Fr3d5vPMIm23MUnyVugy4MNZLKNSbmOX', '2019-05-07 08:00:17', '2019-05-07 08:00:29'),
+(5, 'teacher', 'teacher@gmail.com', '$2y$10$7QftO43muNPAaJFcRrnYLuL1TpLalqr4KDvAjY6Eug4Oc2LUBS7SW', 'teacher', 'TeztdS6KJvEqqedSddYyN9FbAhnb6z9R4jKGCeyT5GRtacarP2PDiWxmeq6T', '2019-05-07 08:00:48', '2019-05-09 07:15:37');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
