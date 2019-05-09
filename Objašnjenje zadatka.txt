@@ -1,0 +1,8 @@
+Prvi zadatak je napravljen uz pomoc naredbe "php artisan make:auth".
+U formu za registraciju ubacio sam izbor uloge: student ili nastavnik.
+Buduci da admin može biti samo jedan korisnik, 
+njega sam napravio u terminalu uz pomoc naredbe "php artisan tinker".
+Postavio sam mu parametre i spremio u bazu.
+
+Omogucio sam adminu da ima prikaz svih korisnika i uvid u njihove uloge 
+te mogucnost mjenjanja tih uloga.
